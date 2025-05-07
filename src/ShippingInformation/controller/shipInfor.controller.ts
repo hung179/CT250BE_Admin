@@ -29,4 +29,12 @@ import { MessagePattern, Payload } from "@nestjs/microservices";
         deleteShippingInformation(@Payload() id: string) {
             return this.shippingInformationService.delete(id);
         }
+        @MessagePattern('get_shipping_information_by_province') 
+        findShippingInformationByProvince(@Payload() tinh: string) {
+            return this.shippingInformationService.getShippingInformationByProvince(tinh);
+        }
+        @MessagePattern('get_all_shipping_information')
+        getAll(@Payload() data: any){
+            return this.shippingInformationService.findAll();
+        } 
     }

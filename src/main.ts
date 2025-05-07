@@ -15,7 +15,7 @@ async function bootstrap() {
       },
     });
   await redisMicroservice.listen();
-  await app.listen(process.env.PORT ?? 4003);
+  await app.listen(process.env.PORT ?? 4001, '0.0.0.0');
   if (module.hot) {
     module.hot.accept();
     module.hot.dispose(() => app.close());

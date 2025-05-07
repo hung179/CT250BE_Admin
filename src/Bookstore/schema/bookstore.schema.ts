@@ -6,14 +6,16 @@ export type BookStoreDocument = HydratedDocument<BookStore>
 @Schema()
 export class BookStore {
     @Prop({required:true})
-    email_NS: string;
+    username_NS: string;
     @Prop({required:true})
     mk_NS: string;
-    @Prop({required:true})
+    @Prop({required:false})
+    email_NS: string;
+    @Prop({required:false})
     sdt_NS: string;
-    @Prop({required:true})
+    @Prop({required:false})
     diaChi_NS: string;
-    @Prop({required:true})
+    @Prop({required:false})
     gioiThieu_NS: string;
     @Prop({default: 'admin'})
     role: string;

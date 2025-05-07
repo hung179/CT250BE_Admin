@@ -5,7 +5,7 @@ export type ShippingInformationDocument =  HydratedDocument<ShippingInformation>
 
 @Schema()
 export class ShippingInformation {
-    @Prop({required: true})
+    @Prop({required: true}) 
     tinh_VC: string;
     @Prop({required: true})
     gia_VC: number;
@@ -13,8 +13,8 @@ export class ShippingInformation {
     giaVuotMuc_VC: number;
     @Prop({required: true})
     mucVuot_VC: number;
-    @Prop({default: () => new Date()})
-    thoiGian_VC: Date;
+    @Prop({required: true})
+    thoiGian_VC: number;
 }
 
-export const ShippingInformationSchema = SchemaFactory.createForClass(ShippingInformation);
+export const ShippingInformationSchema = SchemaFactory.createForClass(ShippingInformation); 
